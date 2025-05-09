@@ -1,6 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
@@ -40,8 +38,8 @@ export default function LandingPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
-        <Button className="rounded-2xl px-6 py-3 text-lg bg-purple-600 hover:bg-purple-700 text-white shadow-lg">Download for Android</Button>
-        <Button disabled className="rounded-2xl px-6 py-3 text-lg bg-gray-300 text-gray-600 cursor-not-allowed">Download for iOS (Coming Soon)</Button>
+        <a href="#" className="rounded-2xl px-6 py-3 text-lg bg-purple-600 hover:bg-purple-700 text-white shadow-lg text-center">Download for Android</a>
+        <span className="rounded-2xl px-6 py-3 text-lg bg-gray-300 text-gray-600 cursor-not-allowed text-center">Download for iOS (Coming Soon)</span>
       </motion.div>
 
       <motion.div
@@ -59,11 +57,9 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="rounded-2xl shadow-md hover:shadow-xl transition">
-              <CardContent className="p-6 text-center text-lg font-semibold text-purple-700">
-                {feature}
-              </CardContent>
-            </Card>
+            <div className="rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center text-lg font-semibold text-purple-700 bg-white">
+              {feature}
+            </div>
           </motion.div>
         ))}
       </motion.div>
