@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const uvData = [
@@ -65,7 +66,7 @@ export default function LandingPage() {
       </motion.div>
 
       <div className="w-full max-w-4xl py-12">
-        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">Today’s UV Index Forecast</h2>
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">Today's UV Index Forecast</h2>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={uvData}>
             <defs>
@@ -88,7 +89,18 @@ export default function LandingPage() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
-        © 2025 Mind Mirror AI. All rights reserved.
+        <div className="flex flex-col items-center space-y-2">
+          <div className="flex space-x-4 mb-2">
+            <Link to="/delete-account" className="text-purple-600 hover:text-purple-800 hover:underline transition-colors">
+              Account Deletion
+            </Link>
+            <span>•</span>
+            <Link to="/privacy-policy" className="text-purple-600 hover:text-purple-800 hover:underline transition-colors">
+              Privacy Policy & Terms
+            </Link>
+          </div>
+          <p>© 2025 Mind Mirror AI. All rights reserved.</p>
+        </div>
       </motion.footer>
     </div>
   );
